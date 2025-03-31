@@ -4,5 +4,10 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
+  variants: {
+    extend: {
+      opacity: ['in-view'],
+    },
+  },
+  plugins: [require('@tailwindcss/forms')],
 }
