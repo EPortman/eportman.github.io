@@ -1,5 +1,5 @@
 <template>
-  <NuxtParticles id="tsparticles" :options="options" @load="onLoad"></NuxtParticles>
+  <NuxtParticles id="tsparticles" :options="options" @load="onLoad" />
 </template>
 
 <script setup lang="ts">
@@ -9,28 +9,57 @@ import type { Container } from '@tsparticles/engine'
 const options = {
   fpsLimit: 60,
   particles: {
-    number: { value: 100, density: { enable: true, area: 800 } },
+    shape: {
+      type: ['circle', 'star'],
+      options: {
+        star: {
+          sides: 5,
+        },
+      },
+    },
+    number: { value: 180, density: { enable: true, area: 800 } },
     color: { value: '#ffffff' },
-    shape: { type: 'circle' },
     opacity: {
       value: 0.8,
       random: true,
-      anim: { enable: true, speed: 1, opacity_min: 0.3 },
+      anim: {
+        enable: true,
+        speed: 0.5,
+        opacity_min: 0.3,
+      },
     },
-    size: { value: { min: 1, max: 3 } },
+    size: {
+      value: { min: 0.3, max: 1.5 },
+      anim: {
+        enable: true,
+        speed: 1,
+        minimumValue: 0.3,
+        sync: false,
+      },
+    },
     move: {
       enable: true,
-      speed: 0.2,
+      speed: 0.3,
       direction: 'none',
       random: true,
       straight: false,
       outModes: { default: 'out' },
     },
+    twinkle: {
+      particles: {
+        enable: true,
+        frequency: 0.03,
+        opacity: 1,
+      },
+    },
   },
-  interactivity: { detectsOn: 'canvas', events: { resize: true } },
+  interactivity: {
+    detectsOn: 'canvas',
+    events: { resize: true },
+  },
   detectRetina: true,
 } as any
-/* eslint-enable @typescript-eslint/no-explicit-any */
+// eslint-enable @typescript-eslint/no-explicit-any
 
 const onLoad = (container: Container) => {
   container.pause()
@@ -46,6 +75,6 @@ const onLoad = (container: Container) => {
   top: 0;
   left: 0;
   z-index: -1;
-  background-color: #000;
+  background: linear-gradient(180deg, #05080f 0%, #0f1a28 50%, #192337 100%);
 }
 </style>
