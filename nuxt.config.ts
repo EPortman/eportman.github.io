@@ -4,7 +4,6 @@ export default defineNuxtConfig({
   srcDir: 'app/',
   modules: ['nuxt-particles', '@nuxtjs/tailwindcss', '@nuxtjs/google-fonts'],
   plugins: ['~/plugins/v-intersect.client.ts'],
-  // @ts-ignore: googleFonts property is provided by @nuxtjs/google-fonts module
   googleFonts: { families: { Ubuntu: true }, display: 'swap' },
   css: ['@/assets/css/main.css'],
   compatibilityDate: '2025-03-30',
