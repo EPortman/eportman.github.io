@@ -1,14 +1,123 @@
 <template>
-  <section class="contact-section py-16 text-center">
-    <h2 class="text-3xl font-bold text-white">Contact</h2>
-    <p class="mt-4 text-gray-300">Placeholder for your contact details or contact form.</p>
+  <section :class="sectionClasses">
+    <div :class="containerClasses">
+      <!-- Section Title -->
+      <h2 :class="titleClasses">Contact</h2>
+      <p :class="subtitleClasses">Placeholder for your contact details or contact form.</p>
+
+      <!-- Contact Form Card -->
+      <div :class="cardClasses">
+        <form @submit.prevent="submitForm">
+          <div class="space-y-4">
+            <!-- Name Field -->
+            <div>
+              <label :class="labelClasses" for="name">Name</label>
+              <input id="name" v-model="name" :class="inputClasses" type="text" placeholder="Your Name" required />
+            </div>
+
+            <!-- Email Field -->
+            <div>
+              <label :class="labelClasses" for="email">Email</label>
+              <input id="email" v-model="email" :class="inputClasses" type="email" placeholder="Your Email" required />
+            </div>
+
+            <!-- Message Field -->
+            <div>
+              <label :class="labelClasses" for="message">Message</label>
+              <textarea
+                id="message"
+                v-model="message"
+                :class="inputClasses"
+                placeholder="Your Message..."
+                rows="5"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button :class="buttonClasses" type="submit">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref, computed } from 'vue'
+import { useThemeStore } from '~/stores/theme'
+
+/* ------------------
+   State & Functions
+--------------------- */
+const themeStore = useThemeStore()
+
+const name = ref('')
+const email = ref('')
+const message = ref('')
+
+function submitForm() {
+  // In a real-world app, you'd send these values to a server or an API
+  console.log('Form submitted:', {
+    name: name.value,
+    email: email.value,
+    message: message.value,
+  })
+
+  // Clear fields or show a success message
+  name.value = ''
+  email.value = ''
+  message.value = ''
+}
+
+/* ------------------
+   Computed Classes
+--------------------- */
+const sectionClasses = computed(() => {
+  return 'py-20 px-4'
+})
+
+const containerClasses = computed(() => {
+  // Slightly narrower max-w to keep form centered
+  return 'container mx-auto flex flex-col items-center space-y-8 max-w-3xl'
+})
+
+const titleClasses = computed(() => {
+  return themeStore.theme === 'dark'
+    ? 'text-4xl font-bold text-white text-center animate-fade-in'
+    : 'text-4xl font-bold text-gray-900 text-center animate-fade-in'
+})
+
+const subtitleClasses = computed(() => {
+  return themeStore.theme === 'dark' ? 'text-gray-300 text-center text-sm' : 'text-gray-700 text-center text-sm'
+})
+
+const cardClasses = computed(() => {
+  const base = 'w-full p-6 rounded-lg backdrop-blur-md shadow space-y-4 transition-all'
+  return themeStore.theme === 'dark' ? `${base} bg-black/30` : `${base} bg-white/80 shadow-xl ring-1 ring-gray-200`
+})
+
+const labelClasses = computed(() => {
+  return themeStore.theme === 'dark'
+    ? 'block text-gray-300 text-sm font-medium mb-1'
+    : 'block text-gray-700 text-sm font-medium mb-1'
+})
+
+const inputClasses = computed(() => {
+  const base = 'w-full px-3 py-2 rounded-md focus:outline-none focus:ring-2 transition-all'
+  return themeStore.theme === 'dark'
+    ? `${base} bg-gray-800 text-white focus:ring-blue-500`
+    : `${base} bg-gray-100 text-gray-900 focus:ring-blue-500`
+})
+
+const buttonClasses = computed(() => {
+  const base = 'px-4 py-2 rounded-md font-semibold transition-colors'
+  return themeStore.theme === 'dark'
+    ? `${base} bg-blue-600 text-white hover:bg-blue-700`
+    : `${base} bg-blue-500 text-white hover:bg-blue-600`
+})
+</script>
 
 <style scoped>
-.contact-section {
-  /* Custom styles if needed */
-}
+/* Add additional styling if needed */
 </style>

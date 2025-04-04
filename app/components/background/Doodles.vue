@@ -13,7 +13,7 @@ import type { Engine } from '@tsparticles/engine'
 const options = {
   fpsLimit: 60,
   background: {
-    image: 'url(/OLD_PAPER_TEXTURE.jpg)',
+    image: 'url(/textures/paper.jpg)',
     size: 'cover',
     position: 'center center',
     repeat: 'no-repeat',
@@ -27,30 +27,38 @@ const options = {
       type: 'image',
       options: {
         image: [
-          { src: '/bear_doodle.png', width: 80, height: 80, crossOrigin: 'anonymous' },
-          { src: '/chicken_doodle.png', width: 80, height: 80, crossOrigin: 'anonymous' },
-          { src: '/coffee_doodle.png', width: 80, height: 80, crossOrigin: 'anonymous' },
-          { src: '/devil_doodle.png', width: 80, height: 80, crossOrigin: 'anonymous' },
-          { src: '/lightbulb_doodle.png', width: 80, height: 80, crossOrigin: 'anonymous' },
-          { src: '/llama_doodle.png', width: 80, height: 80, crossOrigin: 'anonymous' },
-          { src: '/mustache_doodle.png', width: 80, height: 80, crossOrigin: 'anonymous' },
-          { src: '/notebook_doodle.png', width: 80, height: 80, crossOrigin: 'anonymous' },
-          { src: '/owl_doodle.png', width: 80, height: 80, crossOrigin: 'anonymous' },
-          { src: '/pencil_doodle.png', width: 80, height: 80, crossOrigin: 'anonymous' },
+          // TO_DO: Need 20 more doodles
+          { src: '/doodles/arrow.png', width: 80, height: 80, crossOrigin: 'anonymous' },
+          { src: '/doodles/bear.png', width: 80, height: 80, crossOrigin: 'anonymous' },
+          { src: '/doodles/bread.png', width: 80, height: 80, crossOrigin: 'anonymous' },
+          { src: '/doodles/candy.png', width: 80, height: 80, crossOrigin: 'anonymous' },
+          { src: '/doodles/chicken.png', width: 80, height: 80, crossOrigin: 'anonymous' },
+          { src: '/doodles/clock.png', width: 80, height: 80, crossOrigin: 'anonymous' },
+          { src: '/doodles/coffee.png', width: 80, height: 80, crossOrigin: 'anonymous' },
+          { src: '/doodles/devil.png', width: 80, height: 80, crossOrigin: 'anonymous' },
+          { src: '/doodles/drumstick.png', width: 80, height: 80, crossOrigin: 'anonymous' },
+          { src: '/doodles/fern.png', width: 80, height: 80, crossOrigin: 'anonymous' },
+          { src: '/doodles/folder.png', width: 80, height: 80, crossOrigin: 'anonymous' },
+          { src: '/doodles/lightbulb.png', width: 80, height: 80, crossOrigin: 'anonymous' },
+          { src: '/doodles/llama.png', width: 80, height: 80, crossOrigin: 'anonymous' },
+          { src: '/doodles/mustache.png', width: 80, height: 80, crossOrigin: 'anonymous' },
+          { src: '/doodles/notebook.png', width: 80, height: 80, crossOrigin: 'anonymous' },
+          { src: '/doodles/owl.png', width: 80, height: 80, crossOrigin: 'anonymous' },
+          { src: '/doodles/pencil.png', width: 80, height: 80, crossOrigin: 'anonymous' },
+          { src: '/doodles/star.png', width: 80, height: 80, crossOrigin: 'anonymous' },
+          { src: '/doodles/tree.png', width: 80, height: 80, crossOrigin: 'anonymous' },
+          { src: '/doodles/wizard_hat.png', width: 80, height: 80, crossOrigin: 'anonymous' },
         ],
       },
     },
     size: {
-      // Slightly bigger: random size between 25px and 50px
       value: { min: 25, max: 50 },
     },
     opacity: {
-      // More visible: random between 0.15 and 0.30
       value: { min: 0.15, max: 0.3 },
     },
     move: {
       enable: true,
-      // Gentle drifting
       speed: 0.2,
       direction: 'none',
       random: true,
@@ -60,10 +68,13 @@ const options = {
     rotate: {
       animation: {
         enable: true,
-        // Slow rotation
         speed: 0.8,
         sync: false,
       },
+    },
+    collisions: {
+      enable: true,
+      mode: 'bounce', // Optional: "bounce" or "absorb"
     },
   },
   interactivity: {
@@ -89,7 +100,6 @@ async function particlesInit(engine: Engine) {
   top: 0;
   left: 0;
   z-index: -1;
-  /* Fallback background if the paper texture fails to load */
   background: #faf8f6;
 }
 </style>

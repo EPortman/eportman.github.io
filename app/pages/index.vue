@@ -32,6 +32,5 @@
         </section>
       </client-only>
     </div>
-    <Footer />
   </div>
 </template>

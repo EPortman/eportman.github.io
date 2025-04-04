@@ -31,7 +31,7 @@ const sections = [
   { id: 'hero', label: 'Home', icon: 'mdi:home' },
   { id: 'about', label: 'About', icon: 'mdi:account' },
   { id: 'experience', label: 'Experience', icon: 'mdi:briefcase' },
-  { id: 'project', label: 'Project', icon: 'mdi:folder' },
+  { id: 'project', label: 'Projects', icon: 'mdi:folder' },
   { id: 'contact', label: 'Contact', icon: 'mdi:email' },
 ]
 
