@@ -1,7 +1,7 @@
 <template>
   <div :class="cardClasses">
     <h3 :class="cardTitleClasses">Tech Stack</h3>
-    <div :class="techGridClasses">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 text-sm">
       <div v-for="item in techStack" :key="item.title" :class="stackGroupClasses">
         <Icon :icon="item.icon" :class="iconClasses" />
         <div>
@@ -19,8 +19,8 @@ import { Icon } from '@iconify/vue'
 import { useThemeStore } from '~/stores/theme'
 
 const themeStore = useThemeStore()
+const isDark = computed(() => themeStore.theme === 'dark')
 
-// Tech Stack data
 const techStack = [
   {
     icon: 'mdi:code-tags',
@@ -30,7 +30,7 @@ const techStack = [
   {
     icon: 'mdi:cloud-outline',
     title: 'Cloud & Infrastructure',
-    content: 'GCP, OCP, AWS, Firebase, Kubernetes',
+    content: 'GCP, Openshift, AWS, Firebase, Kubernetes',
   },
   {
     icon: 'mdi:robot',
@@ -59,8 +59,8 @@ const techStack = [
   },
   {
     icon: 'mdi:cog',
-    title: 'DevOps / CI/CD',
-    content: 'GitHub Actions, Docker, Cypress',
+    title: 'DevOps & CI/CD',
+    content: 'GitHub Actions, Docker',
   },
   {
     icon: 'mdi:account-group-outline',
@@ -69,51 +69,39 @@ const techStack = [
   },
 ]
 
-// Computed classes for dark vs. light mode:
-
-// Card container styling
 const cardClasses = computed(() => {
-  const base = 'w-full max-w-5xl mx-auto p-6 rounded-lg backdrop-blur-md shadow space-y-4 transition-all'
-  return themeStore.theme === 'dark' ? `${base} bg-black/40` : `${base} bg-white/90 shadow-2xl ring-1 ring-gray-200`
+  return [
+    'mx-auto p-6 rounded-lg backdrop-blur-md shadow space-y-4 transition-all',
+    isDark.value ? 'bg-black/40' : 'bg-white/90 shadow-2xl ring-1 ring-gray-200'
+  ].join(' ')
 })
 
-// Heading styling
 const cardTitleClasses = computed(() => {
-  return themeStore.theme === 'dark'
-    ? 'text-2xl font-semibold text-white text-center'
-    : 'text-2xl font-semibold text-gray-900 text-center'
+  return [
+    'text-2xl font-semibold text-center',
+    isDark.value ? 'text-white' : 'text-gray-900'
+  ].join(' ')
 })
 
-// Grid container
-const techGridClasses = computed(() => {
-  return 'grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 text-sm'
-})
-
-// Stack group styling
 const stackGroupClasses = computed(() => {
-  return themeStore.theme === 'dark'
-    ? 'flex items-start gap-3 p-2 rounded-md transition duration-200 hover:bg-white/5'
-    : 'flex items-start gap-3 p-2 rounded-md transition duration-200 hover:bg-black/5'
+  return [
+    'flex items-start gap-3 p-2 rounded-md transition duration-200',
+    isDark.value ? 'hover:bg-white/5' : 'hover:bg-black/5'
+  ].join(' ')
 })
 
-// Stack title styling
 const stackTitleClasses = computed(() => {
-  return themeStore.theme === 'dark' ? 'text-white font-medium mb-0.5' : 'text-black font-medium mb-0.5'
+  return isDark.value ? 'text-white font-medium mb-0.5' : 'text-black font-medium mb-0.5'
 })
 
-// Stack text styling
 const stackTextClasses = computed(() => {
-  return themeStore.theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+  return isDark.value ? 'text-gray-300' : 'text-gray-700'
 })
 
-// Icon styling
 const iconClasses = computed(() => {
-  return themeStore.theme === 'dark'
-    ? 'text-white w-5 h-5 mt-0.5 transition-transform duration-200 ease-out'
-    : 'text-black w-5 h-5 mt-0.5 transition-transform duration-200 ease-out'
+  return [
+    'w-5 h-5 mt-0.5 transition-transform duration-200 ease-out',
+    isDark.value ? 'text-white' : 'text-black'
+  ]
 })
 </script>
-
-<style scoped>
-/* Additional common styles can be added here if needed */
-</style>
