@@ -72,21 +72,18 @@ const techStack = [
 const cardClasses = computed(() => {
   return [
     'mx-auto p-6 rounded-lg backdrop-blur-md shadow space-y-4 transition-all',
-    isDark.value ? 'bg-black/40' : 'bg-white/90 shadow-2xl ring-1 ring-gray-200'
+    isDark.value ? 'bg-black/40' : 'bg-white/90 shadow-2xl ring-1 ring-gray-200',
   ].join(' ')
 })
 
 const cardTitleClasses = computed(() => {
-  return [
-    'text-2xl font-semibold text-center',
-    isDark.value ? 'text-white' : 'text-gray-900'
-  ].join(' ')
+  return ['text-2xl font-semibold text-center', isDark.value ? 'text-white' : 'text-gray-900'].join(' ')
 })
 
 const stackGroupClasses = computed(() => {
   return [
     'flex items-start gap-3 p-2 rounded-md transition duration-200',
-    isDark.value ? 'hover:bg-white/5' : 'hover:bg-black/5'
+    isDark.value ? 'hover:bg-white/5' : 'hover:bg-black/5',
   ].join(' ')
 })
 
@@ -99,9 +96,6 @@ const stackTextClasses = computed(() => {
 })
 
 const iconClasses = computed(() => {
-  return [
-    'w-5 h-5 mt-0.5 transition-transform duration-200 ease-out',
-    isDark.value ? 'text-white' : 'text-black'
-  ]
+  return ['w-5 h-5 mt-0.5 transition-transform duration-200 ease-out', isDark.value ? 'text-white' : 'text-black']
 })
 </script>

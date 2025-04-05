@@ -23,9 +23,6 @@ const themeStore = useThemeStore()
 const isDark = computed(() => themeStore.theme === 'dark')
 
 const titleClasses = computed(() => {
-  return [
-    'text-4xl font-bold text-center animate-fade-in',
-    isDark.value ? 'text-white' : 'text-gray-900'
-  ].join(' ')
+  return ['text-4xl font-bold text-center animate-fade-in', isDark.value ? 'text-white' : 'text-gray-900'].join(' ')
 })
 </script>

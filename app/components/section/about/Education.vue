@@ -24,7 +24,7 @@ const isDark = computed(() => themeStore.theme === 'dark')
 const cardClasses = computed(() => {
   return [
     'backdrop-blur-md rounded-lg p-6 shadow-md space-y-4 transition-all',
-    isDark.value ? 'bg-black/40' : 'bg-white/95 shadow-2xl ring-1 ring-gray-200'
+    isDark.value ? 'bg-black/40' : 'bg-white/95 shadow-2xl ring-1 ring-gray-200',
   ].join(' ')
 })
 
