@@ -1,12 +1,12 @@
 <template>
   <div :class="cardClasses">
-    <h3 :class="cardTitleClasses">Tech Stack</h3>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 text-sm">
+    <h3 class="text-xl font-semibold text-center">Tech Stack</h3>
+    <div class="text-sm grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-4">
       <div v-for="item in techStack" :key="item.title" :class="stackGroupClasses">
         <Icon :icon="item.icon" :class="iconClasses" />
         <div>
-          <p :class="stackTitleClasses">{{ item.title }}</p>
-          <p :class="stackTextClasses">{{ item.content }}</p>
+          <p class="font-semibold text-gray-500 dark:text-gray-400">{{ item.title }}</p>
+          <p>{{ item.content }}</p>
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@ const techStack = [
   {
     icon: 'mdi:cloud-outline',
     title: 'Cloud & Infrastructure',
-    content: 'GCP, Openshift, AWS, Firebase, Kubernetes',
+    content: 'GCP, Openshift, AWS, Kubernetes',
   },
   {
     icon: 'mdi:robot',
@@ -71,13 +71,9 @@ const techStack = [
 
 const cardClasses = computed(() => {
   return [
-    'mx-auto p-6 rounded-lg backdrop-blur-md shadow space-y-4 transition-all',
+    'p-8 backdrop-blur-md rounded-xl transform hover:-translate-y-1 hover:shadow-lg duration-300 ease-in-out',
     isDark.value ? 'bg-black/40 shadow-xl ring-1 ring-white/10' : 'bg-white/90 shadow-2xl ring-1 ring-black/10',
   ].join(' ')
-})
-
-const cardTitleClasses = computed(() => {
-  return ['text-2xl font-semibold text-center', isDark.value ? 'text-white' : 'text-gray-900'].join(' ')
 })
 
 const stackGroupClasses = computed(() => {
@@ -87,15 +83,10 @@ const stackGroupClasses = computed(() => {
   ].join(' ')
 })
 
-const stackTitleClasses = computed(() => {
-  return isDark.value ? 'text-white font-medium mb-0.5' : 'text-black font-medium mb-0.5'
-})
-
-const stackTextClasses = computed(() => {
-  return isDark.value ? 'text-gray-300' : 'text-gray-700'
-})
-
 const iconClasses = computed(() => {
-  return ['w-5 h-5 mt-0.5 transition-transform duration-200 ease-out', isDark.value ? 'text-white' : 'text-black']
+  return [
+    'w-5 h-5 mt-0.5 transition-transform duration-200 ease-out cursor-pointer hover:scale-110',
+    isDark.value ? 'text-white' : 'text-black',
+  ]
 })
 </script>

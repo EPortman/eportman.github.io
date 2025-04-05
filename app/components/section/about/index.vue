@@ -1,7 +1,7 @@
 <template>
   <section class="py-20 px-4">
     <div :class="aboutContainerClasses">
-      <h2 class="text-4xl font-bold text-center">About Me</h2>
+      <h1 :class="[isDark ? 'text-white' : 'text-black', 'text-4xl font-bold text-center']">About Me</h1>
 
       <div class="grid md:grid-cols-2 gap-8">
         <SectionAboutSummary />

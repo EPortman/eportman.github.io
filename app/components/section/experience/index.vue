@@ -1,7 +1,7 @@
 <template>
   <section class="py-20 px-4">
     <div :class="experienceContainerClasses">
-      <h2 class="text-4xl font-bold text-center">Experience</h2>
+      <h1 :class="[isDark ? 'text-white' : 'text-black', 'text-4xl font-bold text-center']">Experience</h1>
       <SectionExperienceBCRegistries />
       <SectionExperienceOther />
     </div>
