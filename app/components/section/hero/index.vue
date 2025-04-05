@@ -58,7 +58,7 @@ const headingClass = computed(() => {
 const subTextClass = computed(() => {
   return [
     'text-lg md:text-xl max-w-xl leading-relaxed transition-all',
-    isDark.value ? 'text-gray-200' : 'text-gray-800',
+    isDark.value ? 'text-gray-300' : 'text-gray-700',
   ].join(' ')
 })
 

@@ -72,7 +72,7 @@ const techStack = [
 const cardClasses = computed(() => {
   return [
     'mx-auto p-6 rounded-lg backdrop-blur-md shadow space-y-4 transition-all',
-    isDark.value ? 'bg-black/40' : 'bg-white/90 shadow-2xl ring-1 ring-gray-200',
+    isDark.value ? 'bg-black/40 shadow-xl ring-1 ring-white/10' : 'bg-white/90 shadow-2xl ring-1 ring-black/10',
   ].join(' ')
 })
 

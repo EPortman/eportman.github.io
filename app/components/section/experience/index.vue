@@ -16,8 +16,9 @@ const themeStore = useThemeStore()
 const isDark = computed(() => themeStore.theme === 'dark')
 
 const experienceContainerClasses = computed(() => {
-  return ['max-w-5xl mx-auto flex flex-col items-center space-y-16', isDark.value ? 'text-white' : 'text-black'].join(
-    ' '
-  )
+  return [
+    'max-w-5xl mx-auto flex flex-col items-center space-y-16',
+    isDark.value ? 'text-gray-300' : 'text-gray-700',
+  ].join(' ')
 })
 </script>

@@ -1,22 +1,25 @@
 <template>
   <div :class="bcRegCardClasses">
-    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
+    <!-- Experience Title -->
+    <div class="flex flex-col md:flex-row justify-between">
       <div>
-        <h3 class="text-xl md:text-2xl font-semibold">BC Registries and Online Services</h3>
-        <p class="text-sm md:text-base font-medium mt-1">Application Developer</p>
+        <h3 class="text-xl font-semibold">BC Registries and Online Services</h3>
+        <p class="text-sm font-semibold text-gray-500 dark:text-gray-400">Application Developer</p>
       </div>
-      <p class="text-sm text-gray-500 dark:text-gray-400 md:ml-auto">May 2024 - Present | Victoria, BC</p>
+      <p class="text-sm text-gray-500 dark:text-gray-400">May 2024 - Present | Victoria, BC</p>
     </div>
 
-    <p class="mt-4 text-sm md:text-base leading-relaxed">
-      I maintained and enhanced government registry systems by managing Flask-based backend services, integrating them
+    <!-- Experience Description -->
+    <p class="mt-2">
+      Maintained and enhanced government registry systems by managing Flask-based backend services, integrating them
       with Vue/Nuxt interfaces, and ensuring reliable deployments on Google Cloud Platform.
     </p>
 
-    <ul class="mt-4 space-y-2 text-sm md:text-base leading-normal">
+    <!-- Experience Accomplishments -->
+    <ul class="mt-1 space-y-1">
       <li v-for="(item, index) in bcRegBulletPoints" :key="index" class="flex items-start gap-2">
-        <Icon icon="mdi:chevron-right" class="w-4 h-4 text-current mt-1 shrink-0" />
-        <span>{{ item }}</span>
+        <Icon icon="mdi:chevron-right" class="w-4 h-4 mt-1" />
+        <span class="text-sm">{{ item }}</span>
       </li>
     </ul>
   </div>
@@ -40,8 +43,8 @@ const bcRegBulletPoints = [
 
 const bcRegCardClasses = computed(() => {
   return [
-    'p-8 backdrop-blur-md rounded-xl transform hover:-translate-y-1 hover:shadow-lg duration-300 ease-in-out',
-    isDark.value ? 'bg-black/40 shadow-xl' : 'bg-white/90 shadow-2xl',
+    'p-8 backdrop-blur-md rounded-xl transform hover:-translate-y-1 hover:shadow-lg duration-300 ease-in-out leading-relaxed',
+    isDark.value ? 'bg-black/40 shadow-xl ring-1 ring-white/10' : 'bg-white/90 shadow-2xl ring-1 ring-black/10',
   ].join(' ')
 })
 </script>

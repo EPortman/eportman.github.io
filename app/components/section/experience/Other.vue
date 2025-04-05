@@ -1,22 +1,10 @@
 <template>
   <div class="grid gap-6 md:grid-cols-3 mx-auto">
     <div v-for="(role, index) in otherRoles" :key="index" :class="otherExperienceCardClasses">
-      <h4 class="text-sm md:text-base font-semibold">
-        {{ role.title }}
-        <span v-if="role.company" class="font-normal text-gray-500 dark:text-gray-400 ml-1">
-          at {{ role.company }}
-        </span>
-      </h4>
-
-      <p class="mt-1 text-xs md:text-sm">
-        {{ role.date }}
-        <span v-if="role.location" class="mx-1 text-gray-400 dark:text-gray-500">|</span>
-        {{ role.location }}
-      </p>
-
-      <p class="mt-2 text-sm leading-relaxed">
-        {{ role.description }}
-      </p>
+      <h4 class="text-xl font-semibold">{{ role.company }}</h4>
+      <p class="text-sm font-semibold text-gray-500 dark:text-gray-400">{{ role.title }}</p>
+      <p class="text-xs text-gray-500 dark:text-gray-400">{{ role.date }} | {{ role.location }}</p>
+      <p class="mt-2 text-sm leading-relaxed">{{ role.description }}</p>
     </div>
   </div>
 </template>
@@ -58,7 +46,7 @@ const otherRoles = [
 const otherExperienceCardClasses = computed(() => {
   return [
     'p-4 backdrop-blur-md rounded-md transform hover:-translate-y-1 hover:shadow-lg duration-300 ease-in-out',
-    isDark.value ? 'bg-black/40 shadow-xl' : 'bg-white/90 shadow-2xl',
+    isDark.value ? 'bg-black/40 shadow-xl ring-1 ring-white/10' : 'bg-white/90 shadow-2xl ring-1 ring-black/10',
   ].join(' ')
 })
 </script>
