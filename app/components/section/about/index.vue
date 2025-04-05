@@ -1,5 +1,5 @@
 <template>
-  <section class="py-20 px-4">
+  <section class="py-10 px-4">
     <div :class="aboutContainerClasses">
       <h1 :class="[isDark ? 'text-white' : 'text-black', 'text-4xl font-bold text-center']">About Me</h1>
 
