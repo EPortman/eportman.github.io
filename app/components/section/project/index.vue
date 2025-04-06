@@ -38,7 +38,7 @@ const selectedProjectIndex = ref(0)
 
 const projectsContainerClasses = computed(() => {
   return [
-    'max-w-5xl mx-auto flex flex-col items-center space-y-16',
+    'max-w-5xl mx-auto flex flex-col items-center space-y-8',
     isDark.value ? 'text-gray-300' : 'text-gray-700',
   ].join(' ')
 })
