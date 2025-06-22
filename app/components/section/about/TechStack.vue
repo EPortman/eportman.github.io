@@ -16,10 +16,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { Icon } from '@iconify/vue'
-import { useThemeStore } from '~/stores/theme'
 
-const themeStore = useThemeStore()
-const isDark = computed(() => themeStore.theme === 'dark')
+
 
 const techStack = [
   {
@@ -69,24 +67,5 @@ const techStack = [
   },
 ]
 
-const cardClasses = computed(() => {
-  return [
-    'p-8 backdrop-blur-md rounded-xl transform hover:-translate-y-1 hover:shadow-lg duration-300 ease-in-out',
-    isDark.value ? 'bg-black/40 shadow-xl ring-1 ring-white/10' : 'bg-white/90 shadow-2xl ring-1 ring-black/10',
-  ].join(' ')
-})
 
-const stackGroupClasses = computed(() => {
-  return [
-    'flex items-start gap-3 p-2 rounded-md transition duration-200',
-    isDark.value ? 'hover:bg-white/5' : 'hover:bg-black/5',
-  ].join(' ')
-})
-
-const iconClasses = computed(() => {
-  return [
-    'w-5 h-5 mt-0.5 transition-transform duration-200 ease-out cursor-pointer hover:scale-110',
-    isDark.value ? 'text-white' : 'text-black',
-  ]
-})
 </script>

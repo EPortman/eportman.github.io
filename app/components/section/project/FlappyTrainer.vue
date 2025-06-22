@@ -4,7 +4,7 @@
     <div class="flex items-center justify-between">
       <h1 class="text-2xl md:text-3xl font-bold">Flappy Trainer</h1>
       <a
-        href="https://github.com/yourusername/flappy-trainer"
+        href="https://github.com/EPortman/flappy-trainer"
         target="_blank"
         rel="noopener noreferrer"
         class="text-indigo-600 hover:underline text-sm md:text-base"
@@ -35,7 +35,6 @@
     <figure class="w-full max-w-lg mx-auto">
       <video class="w-full h-auto" controls>
         <source src="/videos/flappy_trainer.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
       </video>
       <figcaption class="text-center text-sm mt-2 text-gray-500 dark:text-gray-400">
         Demonstration of the AI model autonomously navigating Flappy Bird.

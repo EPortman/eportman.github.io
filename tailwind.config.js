@@ -4,7 +4,16 @@ import forms from '@tailwindcss/forms'
 export default {
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        background: '#0f1117',
+        surface: '#1a1d24',
+        textPrimary: '#f4f4f5',
+        textSecondary: '#a0a0a0',
+        border: '#2d2d2d',
+        accent: '#16a34a', // green-500
+      },
+    },
   },
   variants: {
     extend: {

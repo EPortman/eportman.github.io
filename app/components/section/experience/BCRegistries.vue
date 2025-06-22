@@ -28,10 +28,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { Icon } from '@iconify/vue'
-import { useThemeStore } from '~/stores/theme'
-
-const themeStore = useThemeStore()
-const isDark = computed(() => themeStore.theme === 'dark')
 
 const bcRegBulletPoints = [
   'Spearheaded the migration of the Names backend from OpenShift to Google Cloud, adopting a serverless architecture on Cloud Run to reduce overhead and accelerate deployments.',
@@ -44,7 +40,6 @@ const bcRegBulletPoints = [
 const bcRegCardClasses = computed(() => {
   return [
     'p-8 backdrop-blur-md rounded-xl transform hover:-translate-y-1 hover:shadow-lg duration-300 ease-in-out leading-relaxed',
-    isDark.value ? 'bg-black/40 shadow-xl ring-1 ring-white/10' : 'bg-white/90 shadow-2xl ring-1 ring-black/10',
   ].join(' ')
 })
 </script>

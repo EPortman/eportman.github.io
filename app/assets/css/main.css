@@ -1,3 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;          /* Prevent horizontal scroll from accidental overflows */
+  scroll-behavior: smooth;     /* Optional: smooth scroll */
+}
+
 body {
   font-family: 'Ubuntu', sans-serif;
+  line-height: 1.5;
+}
+
+html, body {
+  overflow-x: hidden;
 }

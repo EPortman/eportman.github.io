@@ -10,7 +10,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Ethan Portman – Developer Portfolio',
+      title: 'Ethan Portman - Developer Portfolio',
       meta: [
         { name: 'description', content: 'Full Stack Developer specializing in backend, cloud, and AI.' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },

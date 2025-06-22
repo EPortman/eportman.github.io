@@ -45,12 +45,12 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { useThemeStore } from '~/stores/theme'
+
 
 /* ------------------
    State & Functions
 --------------------- */
-const themeStore = useThemeStore()
+
 
 const name = ref('')
 const email = ref('')
@@ -83,38 +83,30 @@ const containerClasses = computed(() => {
 })
 
 const titleClasses = computed(() => {
-  return themeStore.theme === 'dark'
-    ? 'text-4xl font-bold text-white text-center animate-fade-in'
-    : 'text-4xl font-bold text-gray-900 text-center animate-fade-in'
+  'text-4xl font-bold text-white text-center animate-fade-in'
 })
 
 const subtitleClasses = computed(() => {
-  return themeStore.theme === 'dark' ? 'text-gray-300 text-center text-sm' : 'text-gray-700 text-center text-sm'
+  return 'text-gray-300 text-center text-sm'
 })
 
 const cardClasses = computed(() => {
-  const base = 'w-full p-6 rounded-lg backdrop-blur-md shadow space-y-4 transition-all'
-  return themeStore.theme === 'dark' ? `${base} bg-black/30` : `${base} bg-white/80 shadow-xl ring-1 ring-gray-200`
+  const base = 'p-6 rounded-lg backdrop-blur-md shadow space-y-4 transition-all'
+  return `${base} bg-black/30`
 })
 
 const labelClasses = computed(() => {
-  return themeStore.theme === 'dark'
-    ? 'block text-gray-300 text-sm font-medium mb-1'
-    : 'block text-gray-700 text-sm font-medium mb-1'
+  return 'block text-gray-300 text-sm font-medium mb-1'
 })
 
 const inputClasses = computed(() => {
-  const base = 'w-full px-3 py-2 rounded-md focus:outline-none focus:ring-2 transition-all'
-  return themeStore.theme === 'dark'
-    ? `${base} bg-gray-800 text-white focus:ring-blue-500`
-    : `${base} bg-gray-100 text-gray-900 focus:ring-blue-500`
+  const base = 'px-3 py-2 rounded-md focus:outline-none focus:ring-2 transition-all'
+  return `${base} bg-gray-800 text-white focus:ring-blue-500`
 })
 
 const buttonClasses = computed(() => {
   const base = 'px-4 py-2 rounded-md font-semibold transition-colors'
-  return themeStore.theme === 'dark'
-    ? `${base} bg-blue-600 text-white hover:bg-blue-700`
-    : `${base} bg-blue-500 text-white hover:bg-blue-600`
+  return `${base} bg-blue-600 text-white hover:bg-blue-700`
 })
 </script>
 

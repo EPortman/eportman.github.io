@@ -1,9 +1,11 @@
 <template>
-  <header class="fixed top-0 left-0 w-full flex items-center justify-end px-8 py-4 z-20">
-    <!-- Right-side nav icons -->
+  <div>
+    <!-- Fixed top nav bar -->
     <headerTopNavBar />
 
-    <!-- Left vertical nav with icon + label -->
-    <headerLeftNavBar />
-  </header>
+    <!-- Fixed left vertical nav (hidden on small screens) -->
+    <div class="hidden sm:block">
+      <headerLeftNavBar />
+    </div>
+  </div>
 </template>
