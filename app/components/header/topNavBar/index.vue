@@ -37,7 +37,7 @@
             <HeaderTopNavBarMobileNavIcon icon="mdi:email" label="Contact" href="#contact" @click="closeMobileMenu" />
           </div>
           <div class="pt-6 border-t border-[#1a1a1f] mt-4">
-            <p class="text-xs text-gray-400 mb-2 uppercase tracking-wider">Socials</p>
+            <h2 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Socials</h2>
             <div class="flex space-x-3">
               <HeaderTopNavBarSocialIcon href="https://github.com/EPortman" label="GitHub" icon="mdi:github" />
               <HeaderTopNavBarSocialIcon href="https://www.linkedin.com/in/ethan-portman-920ab62b0/" label="LinkedIn" icon="mdi:linkedin" />

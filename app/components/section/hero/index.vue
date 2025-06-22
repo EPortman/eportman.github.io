@@ -6,9 +6,9 @@
       </h1>
 
       <p class="text-lg md:text-xl text-textSecondary leading-relaxed max-w-2xl mx-auto mb-10">
-        I'm a backend developer focused on scalable APIs, cloud-native systems, and clean architecture. 
-        I value collaboration, simplicity, and building reliable software that performs well and stands 
-        the test of time.
+        I'm a full-stack developer with a strong backend focus, specializing in scalable APIs, 
+        cloud-native systems, and clean architecture. I value collaboration and simplicity, 
+        and I build reliable software that performs and lasts.
       </p>
 
       <div class="flex flex-wrap justify-center gap-4 mb-10">
@@ -33,7 +33,7 @@
         />
       </div>
 
-      <p class="italic text-textMuted text-sm md:text-base">
+      <p class="italic text-textMuted text-white text-sm md:text-base">
         “Let’s build something clear, reliable, and built to last.”
       </p>
     </div>
