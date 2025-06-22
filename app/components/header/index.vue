@@ -1,11 +1,11 @@
 <template>
   <div>
     <!-- Fixed top nav bar -->
-    <headerTopNavBar />
+    <HeaderTopNavBar />
 
-    <!-- Fixed left vertical nav (hidden on small screens) -->
-    <div class="hidden sm:block">
-      <headerLeftNavBar />
+    <!-- Fixed left vertical nav (only on large screens) -->
+    <div class="hidden lg:block">
+      <HeaderLeftNavBar />
     </div>
   </div>
 </template>

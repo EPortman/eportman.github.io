@@ -11,7 +11,7 @@ export default {
         textPrimary: '#f4f4f5',
         textSecondary: '#a0a0a0',
         border: '#2d2d2d',
-        accent: '#16a34a', // green-500
+        accent: '#16a34a',
       },
     },
   },

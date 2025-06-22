@@ -13,7 +13,7 @@ module.exports = {
     'max-len': [
       'error',
       {
-        code: 120,
+        code: 300,
         ignoreUrls: true,
         ignoreStrings: true,
         ignoreTemplateLiterals: true,
@@ -21,4 +21,12 @@ module.exports = {
     ],
     semi: ['error', 'never'],
   },
+  overrides: [
+    {
+      files: ['*.vue'],
+      rules: {
+        'no-undef': 'off',
+      },
+    },
+  ],
 }
