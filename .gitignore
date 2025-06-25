@@ -1,6 +1,5 @@
-# Nuxt dev/build outputs
-.output
-.data
+# Nuxt dev/build outputs (keep .output/public for static site)
+.output/*
 .nuxt
 .nitro
 .cache
