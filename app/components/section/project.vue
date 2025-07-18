@@ -1,6 +1,6 @@
 <template>
   <section id="project" class="pt-10 pb-8 px-6 max-w-6xl mx-auto space-y-8">
-    <h2 class="text-4xl font-extrabold text-center text-green-500">Projects</h2>
+    <h2 class="text-4xl font-extrabold text-center text-accent">Projects</h2>
 
     <!-- Tab Buttons -->
     <div class="flex justify-center gap-2 mb-3">
@@ -34,7 +34,7 @@
       </figure>
       <div class="w-full md:w-1/2 space-y-4">
         <div class="flex items-center justify-between">
-          <h3 class="text-2xl font-bold text-green-500">Flappy Trainer</h3>
+          <h3 class="text-2xl font-bold text-accent">Flappy Trainer</h3>
           <a href="https://github.com/EPortman/flappy-trainer" target="_blank" rel="noopener noreferrer" class="text-indigo-400 text-sm hover:underline"> View Source on GitHub </a>
         </div>
         <p class="text-gray-300 leading-relaxed text-sm md:text-base">
@@ -59,7 +59,7 @@
       </figure>
       <div class="w-full md:w-1/2 space-y-4">
         <div class="flex items-center justify-between">
-          <h3 class="text-2xl font-bold text-green-500">Donkey Kong</h3>
+          <h3 class="text-2xl font-bold text-accent">Donkey Kong</h3>
           <a href="https://github.com/EPortman/Final" target="_blank" rel="noopener noreferrer" class="text-indigo-400 text-sm hover:underline"> View Source on GitHub </a>
         </div>
         <p class="text-gray-300 leading-relaxed text-sm md:text-base">

@@ -1,19 +1,19 @@
 <template>
   <section id="about" class="max-w-7xl py-6 mx-auto px-4 md:px-24">
     <!-- Header -->
-    <h1 class="text-3xl font-bold text-center text-green-500 mb-10">About Me</h1>
+    <h1 class="text-3xl font-bold text-center text-accent mb-10">About Me</h1>
 
     <!-- Grid Layout -->
     <div class="grid gap-6 md:gap-8 lg:gap-10 md:grid-cols-2 lg:grid-cols-3 items-start">
       <!-- Column 1: Tech Stack -->
       <div class="order-2 lg:order-1 space-y-4">
-        <h2 class="text-xl font-semibold text-green-400 mb-2 flex items-center gap-2">
-          <Icon icon="mdi:stack-overflow" class="text-green-400" />
+        <h2 class="text-xl font-semibold text-accent mb-2 flex items-center gap-2">
+          <Icon icon="mdi:stack-overflow" class="text-accent" />
           Tech Stack
         </h2>
         <div class="grid sm:grid-cols-1 gap-4 text-sm text-gray-300">
           <div v-for="item in techStack" :key="item.title" class="flex gap-3 items-start hover:scale-[1.015] transition-all duration-200 group">
-            <Icon :icon="item.icon" class="text-lg mt-1 text-green-400" />
+            <Icon :icon="item.icon" class="text-lg mt-1 text-accent" />
             <div>
               <p class="font-semibold text-gray-200">{{ item.title }}</p>
               <p class="text-xs">{{ item.content }}</p>
@@ -25,8 +25,8 @@
       <!-- Column 2: Summary + Education -->
       <div class="order-1 lg:order-2 space-y-10">
         <div class="group">
-          <h2 class="text-xl font-semibold text-green-400 mb-2 flex items-center gap-2">
-            <Icon icon="mdi:file-document-outline" class="text-green-400" />
+          <h2 class="text-xl font-semibold text-accent mb-2 flex items-center gap-2">
+            <Icon icon="mdi:file-document-outline" class="text-accent" />
             Summary
           </h2>
           <p class="text-sm leading-relaxed text-gray-300">
@@ -35,13 +35,13 @@
         </div>
 
         <div class="group transition-all duration-300">
-          <h2 class="text-xl font-semibold text-green-400 mb-2 flex items-center gap-2">
-            <Icon icon="mdi:school-outline" class="text-green-400" />
+          <h2 class="text-xl font-semibold text-accent mb-2 flex items-center gap-2">
+            <Icon icon="mdi:school-outline" class="text-accent" />
             Education
           </h2>
           <div class="space-y-5 text-sm md:text-base text-gray-300">
             <div v-for="(edu, i) in education" :key="i" class="flex gap-2 items-start hover:scale-[1.015] transition-all duration-200">
-              <Icon icon="mdi:school" class="text-green-400 mt-1 transition-transform" />
+              <Icon icon="mdi:school" class="text-accent mt-1 transition-transform" />
               <div>
                 <p class="text-white">{{ edu.institution }}</p>
                 <p class="text-xs italic">{{ edu.program }}</p>
@@ -54,13 +54,13 @@
 
       <!-- Column 3: Awards -->
       <div class="order-4 lg:order-3 space-y-4">
-        <h2 class="text-xl font-semibold text-green-400 mb-4 flex items-center gap-2">
-          <Icon icon="mdi:trophy-outline" class="text-green-400 transition-transform group-hover:scale-105" />
+        <h2 class="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
+          <Icon icon="mdi:trophy-outline" class="text-accent transition-transform group-hover:scale-105" />
           Awards & Recognition
         </h2>
         <ul class="space-y-5 text-sm md:text-base text-gray-300">
           <li v-for="(award, i) in awards" :key="i" class="flex gap-3 items-start hover:scale-[1.015] transition-all duration-200 group">
-            <Icon icon="mdi:star" class="text-green-400 mt-1 group-hover:scale-110 transition-transform" />
+            <Icon icon="mdi:star" class="text-accent mt-1 group-hover:scale-110 transition-transform" />
             <div>
               <p class="text-white font-medium group-hover:text-white transition-colors">{{ award.title }}</p>
               <p class="text-xs text-gray-400">{{ award.description }}</p>

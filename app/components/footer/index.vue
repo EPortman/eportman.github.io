@@ -4,7 +4,7 @@
       <p class="text-gray-400 font-medium">© {{ currentYear }} Ethan Portman</p>
       <div class="flex items-center gap-2 text-gray-400">
         <div class="flex items-center gap-1">
-          <IconNuxt class="w-4 h-4 text-green-500" />
+          <IconNuxt class="w-4 h-4 text-accent" />
           <span>Nuxt 3</span>
         </div>
         <span class="hidden sm:block w-px h-4 bg-gray-700"></span>
